@@ -1,0 +1,173 @@
+/* HappyNest design tokens — canonical source: apps/admin-dashboard/src/app/(app)/app-globals.css */
+
+@import "tailwindcss";
+@import "tw-animate-css";
+@plugin "tailwindcss-animate";
+
+@custom-variant dark (&:is(.dark *));
+
+:root {
+  --background: #f7f5ef;
+  --foreground: #14293c;
+  --card: #ffffff;
+  --card-foreground: #14293c;
+  --popover: #ffffff;
+  --popover-foreground: #14293c;
+  --primary: #14293c;
+  --primary-foreground: #ffffff;
+  --secondary: #a8c19a;
+  --secondary-foreground: #14293c;
+  --muted: #eee8dc;
+  --muted-foreground: #6c7a85;
+  --accent: #a8c19a;
+  --accent-foreground: #14293c;
+  --destructive: oklch(0.577 0.245 27.325);
+  --destructive-foreground: #ffffff;
+  --border: #e4dfd4;
+  --input: #dbd3c4;
+  --ring: #8aa07f;
+  --chart-1: #14293c;
+  --chart-2: #5b748c;
+  --chart-3: #a8c19a;
+  --chart-4: #d2b29a;
+  --chart-5: #c7b59b;
+  --radius: 0.625rem;
+  --sidebar: #f4f2eb;
+  --sidebar-foreground: #14293c;
+  --sidebar-primary: #14293c;
+  --sidebar-primary-foreground: #ffffff;
+  --sidebar-accent: #e8e2d6;
+  --sidebar-accent-foreground: #14293c;
+  --sidebar-border: #e1d9cc;
+  --sidebar-ring: #8aa07f;
+
+  /* Vertical rhythm */
+  --stack-tight: 0.5rem;
+  --stack-gap: 1.5em;
+  --stack-gap-sm: 1rem;
+  --stack-gap-lg: 2rem;
+  --stack-gap-xl: 2.5rem;
+  --stack-gap-2xl: 3rem;
+}
+
+.dark {
+  --background: #14293c;
+  --foreground: #ece5d8;
+  --card: #162c3f;
+  --card-foreground: #ece5d8;
+  --popover: #3a322c;
+  --popover-foreground: #ece5d8;
+  --primary: #c0a080;
+  --primary-foreground: #ffffff;
+  --secondary: #4a4039;
+  --secondary-foreground: #ece5d8;
+  --muted: #3a322c;
+  --muted-foreground: #c5bcac;
+  --accent: #59493e;
+  --accent-foreground: #ece5d8;
+  --destructive: #b54a35;
+  --destructive-foreground: #ffffff;
+  --border: #14293c;
+  --input: #4a4039;
+  --ring: #c0a080;
+  --chart-1: #c0a080;
+  --chart-2: #b3906f;
+  --chart-3: #a67c52;
+  --chart-4: #8d6e4c;
+  --chart-5: #735a3a;
+  --sidebar: #162c3f;
+  --sidebar-foreground: #ece5d8;
+  --sidebar-primary: #c0a080;
+  --sidebar-primary-foreground: #2d2621;
+  --sidebar-accent: #59493e;
+  --sidebar-accent-foreground: #ece5d8;
+  --sidebar-border: #4a4039;
+  --sidebar-ring: #c0a080;
+}
+
+@theme inline {
+  --font-sans: var(--font-sans);
+  --font-serif: var(--font-serif);
+  --font-mono: var(--font-mono);
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-card: var(--card);
+  --color-card-foreground: var(--card-foreground);
+  --color-popover: var(--popover);
+  --color-popover-foreground: var(--popover-foreground);
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-secondary: var(--secondary);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-accent: var(--accent);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-destructive: var(--destructive);
+  --color-border: var(--border);
+  --color-input: var(--input);
+  --color-ring: var(--ring);
+  --color-chart-1: var(--chart-1);
+  --color-chart-2: var(--chart-2);
+  --color-chart-3: var(--chart-3);
+  --color-chart-4: var(--chart-4);
+  --color-chart-5: var(--chart-5);
+  --color-sidebar: var(--sidebar);
+  --color-sidebar-foreground: var(--sidebar-foreground);
+  --color-sidebar-primary: var(--sidebar-primary);
+  --color-sidebar-primary-foreground: var(--sidebar-primary-foreground);
+  --color-sidebar-accent: var(--sidebar-accent);
+  --color-sidebar-accent-foreground: var(--sidebar-accent-foreground);
+  --color-sidebar-border: var(--sidebar-border);
+  --color-sidebar-ring: var(--sidebar-ring);
+  --radius-sm: calc(var(--radius) * 0.6);
+  --radius-md: calc(var(--radius) * 0.8);
+  --radius-lg: var(--radius);
+  --radius-xl: calc(var(--radius) * 1.4);
+  --radius-2xl: calc(var(--radius) * 1.8);
+  --radius-3xl: calc(var(--radius) * 2.2);
+  --radius-4xl: calc(var(--radius) * 2.6);
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-sidebar text-foreground;
+  }
+}
+
+@layer utilities {
+  .stack {
+    display: flex;
+    flex-direction: column;
+    gap: var(--stack-gap);
+  }
+  .stack-sm {
+    display: flex;
+    flex-direction: column;
+    gap: var(--stack-gap-sm);
+  }
+  .stack-lg {
+    display: flex;
+    flex-direction: column;
+    gap: var(--stack-gap-lg);
+  }
+  .stack-xl {
+    display: flex;
+    flex-direction: column;
+    gap: var(--stack-gap-xl);
+  }
+  .stack-2xl {
+    display: flex;
+    flex-direction: column;
+    gap: var(--stack-gap-2xl);
+  }
+  .stack-tight {
+    display: flex;
+    flex-direction: column;
+    gap: var(--stack-tight);
+  }
+}
